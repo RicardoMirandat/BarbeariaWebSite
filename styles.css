@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+}
+.titulo {
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#sobre {
+    background-color: black;
+   
+    text-align: center;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    color: darkblue;
+    padding: 20px;
+    border-radius: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+#cortes .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#cortes .gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+#redes-sociais{
+    background-color: #333;
+}
+
+#redes-sociais .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#redes-sociais .social-links img {
+    width: 50px;
+    height: 50px;
+}
+
+#informacoes {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 40px 20px;
+    
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    background: rgba(0, 0, 0, 0.577);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+
+
+.loccalizacao p {
+    display: flex;
+    text-align: center;
+}
+#localizacao{
+    box-shadow: 3px 6px 12px rgba(51, 51, 51, 0.3);
+}
+
+#localizacao .map {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Ajustes para os botões do carrossel */
+/* Estilo para o carrossel e os botões */
+.carousel-container {
+    position: relative;
+    width: 80%; /* Controla a largura do carrossel */
+    margin: 0 auto; /* Centraliza o carrossel */
+    overflow: hidden; /* Oculta o excesso de imagens fora do carrossel */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 10px; /* Ajusta a posição à esquerda */
+}
+
+button.next {
+    right: 10px; /* Ajusta a posição à direita */
+}
+
+button img {
+    width: 40px; /* Ajusta o tamanho da imagem do botão */
+    height: 40px;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease; /* Animação suave */
+}
+
+img.slide {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Faz as imagens cobrir o espaço sem distorção */
+}
+
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    justify-content: center;
+}
+.gallery img {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+/* Estilizando a tabela */
+.tabela-estilizada {
+    width: 100%;
+    border-collapse: collapse; /* Remove o espaçamento entre as células */
+    margin: 20px 0; /* Espaço acima e abaixo da tabela */
+}
+
+.tabela-estilizada th, .tabela-estilizada td {
+    padding: 10px; /* Espaço dentro das células */
+    text-align: center; /* Alinha o conteúdo ao centro */
+    border: 1px solid #ddd; /* Borda fina e cinza claro */
+}
+
+.tabela-estilizada th {
+    background-color: #4CAF50; /* Cor de fundo para os cabeçalhos */
+  
+}
+.tabela-estilizada tr:hover {
+    background-color: #ddd; /* Cor ao passar o mouse sobre a linha */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

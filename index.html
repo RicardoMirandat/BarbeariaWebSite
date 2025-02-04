@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia do João</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Alan Cortes</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#cortes">Cortes</a></li>
+                <li><a href="#redes-sociais">Redes Sociais</a></li>
+                <li><a href="#localizacao">Onde Estou</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>area para contar um pouco da sua trajetória como cabeleireiro</p>
+    </section>
+
+    <section id="cortes">
+        <h2 class="titulo">Nossos Cortes</h2>
+        <div class="carousel-container">
+            <button class="prev" onclick="mudarSlide(-1)"><img src="src/imagens/seta-esquerda.png" alt=""></button>
+            <div class="gallery">
+                <img src="src/imagens/cortes/corte02.jpg" class="slide" alt="Corte 1">
+                <img src="src/imagens/cortes/corte03.jpg" class="slide" alt="Corte 2">
+                <img src="src/imagens/cortes/corte04.jpg" class="slide" alt="Corte 3">
+                <img src="src/imagens/cortes/corte05.jpg" class="slide" alt="Corte 4">
+                <img src="src/imagens/cortes/corte06.jpg" class="slide" alt="Corte 5">
+                <img src="src/imagens/cortes/corte07.jpg" class="slide" alt="Corte 6">
+                <img src="src/imagens/cortes/corte08.jpg" class="slide" alt="Corte 7">
+                <img src="src/imagens/cortes/corte09.jpg" class="slide" alt="Corte 8">
+            </div>
+            <button class="next" onclick="mudarSlide(1)"><img src="src/imagens/seta-direita.png" alt=""></button>
+        </div>
+    </section>
+
+    <section id="tabela">
+        <h2 class="centralizado">Tabela de Preços</h2>
+        <table class="tabela-estilizada">
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Corte de Cabelo</td>
+                    <td>R$ 50,00</td>
+                </tr>
+                <tr>
+                    <td>Corte e Barba</td>
+                    <td>R$ 70,00</td>
+                </tr>
+                <tr>
+                    <td>Barba</td>
+                    <td>R$ 30,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+        let slidesPerPage = 2;  // Inicialmente 2 para telas maiores
+
+        // Função para ajustar o número de slides por página conforme a largura da tela
+        function ajustarSlidesPorPagina() {
+            if (window.innerWidth <= 480) {
+                slidesPerPage = 1; // Exibe uma imagem por vez em telas pequenas
+            } else {
+                slidesPerPage = 2; // Exibe duas imagens por vez em telas maiores
+            }
+        }
+
+        // Função para atualizar os slides visíveis
+        function atualizarSlides() {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i >= index && i < index + slidesPerPage) ? "block" : "none";
+            });
+        }
+
+        // Função para mover os slides
+        function mudarSlide(direcao) {
+            index += direcao * slidesPerPage;
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - slidesPerPage;
+            atualizarSlides();
+        }
+
+        // Chama a função para ajustar o número de slides por página quando a página carrega ou a tela é redimensionada
+        window.addEventListener("resize", ajustarSlidesPorPagina);
+        ajustarSlidesPorPagina();
+        atualizarSlides();
+    </script>
+
+    <section id="redes-sociais">
+        <h2 class="titulo">Redes Sociais</h2>
+        <div class="social-links">
+            <a href="https://wa.me/5511999999999" target="_blank">
+                <img src="src/imagens/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/barbeariadojoao" target="_blank">
+                <img src="src/imagens/instagram.png" alt="Instagram">
+            </a>
+            
+        </div>
+    </section>
+    <section id="informacoes">
+        <h2 class="titulo">Informações de Contato</h2>
+        <div class="info-container">
+            <div class="info-box">
+                <h3>Endereço</h3>
+                <p>Rua Exemplo, 123 - Bairro Fictício, Cidade - Estado</p>
+            </div>
+            <div class="info-box">
+                <h3>Telefones para Contato</h3>
+                <p>(11) 99999-9999</p>
+                <p>(11) 98888-8888</p>
+            </div>
+            <div class="info-box">
+                <h3>Horário de Funcionamento</h3>
+                <p>Segunda a Sexta: 09h - 19h</p>
+                <p>Sábado: 09h - 14h</p>
+                <p>Domingo: Fechado</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="localizacao">
+        <h2 class="titulo">Onde Estou</h2>
+        <p class="titulo">Venha já me visitar <br> e cortar o cabelo</p>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342658447564!3d-23.565734367638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1629999999999!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Barbearia do João. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
